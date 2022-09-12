@@ -4,9 +4,9 @@ const =mongoose = require('mongoose');
 const cities = mongoose.Schema({
     name:String,
     currentPopulation:Number,
-    country:String,
+    country: { type: mongoose.Schema.Types.ObjectId, ref: 'countries' },,
 })
 
+const City =mongoose.model('cities', citySchema) 
 
-
-module.exports = Citie
+module.exports = City
